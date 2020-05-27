@@ -1,9 +1,9 @@
 # python 3.7.1
-# Author: Anna Klezovich (adapted for the corpus data by Anastasiia Chizhikova)
+# Author: Anna Klezovich
 # The script is based on Calle Börstell make_signs_still.py script for SSL and NGT
 # https://github.com/borstell/make_sign_stills
 
-# This script extracts holds for signs of RSL. 76.7% accuracy on dictionary data
+# This script extracts holds for signs of RSL. 76.7% accuracy
 
 import cv2, os
 import numpy as np
@@ -99,8 +99,8 @@ def read_frames(video):
     # In some cases we are losing the last peak
     # Thus, we add 2 unoccupied frames in the end to to account for the last peak
 
-    #ending = frames_hist[(occupied_frames_ind[-1] + 1): (occupied_frames_ind[-1] + 3)]
-    #occupied_frames_hist.extend(ending)
+    ending = frames_hist[(occupied_frames_ind[-1] + 1): (occupied_frames_ind[-1] + 3)]
+    occupied_frames_hist.extend(ending)
 
     # Offset is a number of frames cut in the beginning of the video
     # We add offset to key frames later
